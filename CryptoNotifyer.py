@@ -4,7 +4,6 @@ Created on Mon Feb 12 19:28:50 2018
 
 @author: kewal
 """
-import numpy as np
 import urllib.request, json 
 import threading
 from datetime import datetime
@@ -21,14 +20,11 @@ def UpdatePrices():
   try:  
      with urllib.request.urlopen("https://koinex.in/api/ticker") as url:
         data = json.loads(url.read().decode())
-        #for i in data['prices']:
-         #   label.config(text=str(i)+data['prices'][i])
-       # gok.set(data["prices"])
-        print(str(datetime.now()),data['prices']['XRP'])
-        threading.Timer(10, UpdatePrices).start()
   except:
-       print("Unexpected error:")
-       threading.Timer(20, UpdatePrices).start()
+       #print("Unexpected error:")
+       data={'prices':{'BTC': 'ERROR', 'ETH': 'ERROR', 'XRP': 'ERROR', 'BCH': 'ERROR', 'LTC': 'ERROR', 'MIOTA': 'ERROR', 'OMG': 'ERROR', 'ZRX': 'ERROR', 'GNT': 'ERROR', 'REQ': 'ERROR'}}
+  finally:
+      return data
 
          
          

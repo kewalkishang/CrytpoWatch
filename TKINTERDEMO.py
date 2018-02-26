@@ -4,9 +4,9 @@ Created on Sun Feb 25 21:25:21 2018
 
 @author: kewal
 """
-'''from tkinter import *
+from tkinter import *
 import tkinter.messagebox
-root=Tk()'''
+root=Tk()
 
 #FRAMES 
 '''topframe=Frame(root)
@@ -76,6 +76,16 @@ frame.pack()'''
         print("wow this worked")
 b=Buttons(root)'''
 
+#spinbox
+
+def get_va():
+    print(sb.get())
+var = StringVar()
+sb = Spinbox(root, values=("f","u","r"), textvariable=var, width=10)
+sb.pack()
+but1=Button(root,text='get',command=get_va)
+but1.pack()
+
 #DROP DOWN MENU
 '''def DoNothing():
     print("i wont")
@@ -139,9 +149,9 @@ root = tk.Tk()
 label=tk.Label(root, text=i )
 label.pack()
 b = tk.Button(root, text="Create new window", command=create_window)
-b.pack()
+b.pack()'''
 
-root.mainloop()'''
+root.mainloop()
 
 #checkbox 
 '''from tkinter import *
@@ -160,8 +170,7 @@ Button(master, text='Show', command=var_states).grid(row=4, sticky=W, pady=4)
 mainloop()'''
 
 #!/usr/bin/python3
-
-from tkinter import *
+'''from tkinter import *
 class Checkbar(Frame):
    def __init__(self, parent=None, picks=[], side=LEFT, anchor=W):
       Frame.__init__(self, parent)
@@ -185,4 +194,4 @@ if __name__ == '__main__':
       print(list(lng.state()))
   # Button(root, text='Quit', command=root.quit).pack(side=RIGHT)
    Button(root, text='Peek', command=allstates).pack(side=RIGHT)
-   root.mainloop()
+   root.mainloop()'''
